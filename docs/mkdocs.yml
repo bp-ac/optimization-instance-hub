@@ -22,7 +22,7 @@ plugins:
   - search
   - gen-files:
       scripts:
-        - scripts/generate_instances.py
+        - scripts/generate_index_page.py
 
 watch:
   - ../incetances
