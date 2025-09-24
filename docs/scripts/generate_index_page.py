@@ -36,8 +36,8 @@ def extract_summary(markdown_text: str) -> str:
             paragraph_lines.append(line.rstrip())
     summary = " ".join(l.strip() for l in paragraph_lines).strip()
     # 長すぎる場合は短縮
-    if len(summary) > 160:
-        summary = summary[:157].rstrip() + "…"
+    if len(summary) > 80:
+        summary = summary[:77].rstrip() + "…"
     return summary
 
 
@@ -50,7 +50,7 @@ def iter_instance_dirs(instances_root: Path) -> Iterable[Path]:
 def main() -> None:
     # このスクリプトは docs/scripts/ 以下に置かれるため、プロジェクトルートは parents[2]
     project_root = Path(__file__).resolve().parents[2]
-    instances_root = (project_root / "incetances").resolve()
+    instances_root = (project_root / "instances").resolve()
     print(f"[gen] project_root={project_root}")
     print(
         f"[gen] instances_root exists={instances_root.exists()} path={instances_root}"
