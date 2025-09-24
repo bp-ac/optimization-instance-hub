@@ -1,4 +1,4 @@
-# ML-Opt
+# Bin Packing
 
 ## 問題設定
 ビンパッキング問題
