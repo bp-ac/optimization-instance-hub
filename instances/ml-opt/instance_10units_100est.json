@@ -1,0 +1,578 @@
+{
+  "n_units": 10,
+  "n_optimization_features": 7,
+  "n_constant_features": 3,
+  "n_sum_constraints": 10,
+  "features": {
+    "optimization_features": [
+      {
+        "name": "x1",
+        "lower_bound": 0.0,
+        "upper_bound": 500.0,
+        "type": "continuous"
+      },
+      {
+        "name": "x2",
+        "lower_bound": 0.0,
+        "upper_bound": 500.0,
+        "type": "continuous"
+      },
+      {
+        "name": "x3",
+        "lower_bound": 0.0,
+        "upper_bound": 500.0,
+        "type": "continuous"
+      },
+      {
+        "name": "x4",
+        "lower_bound": 0.0,
+        "upper_bound": 500.0,
+        "type": "continuous"
+      },
+      {
+        "name": "x5",
+        "lower_bound": 0.0,
+        "upper_bound": 500.0,
+        "type": "continuous"
+      },
+      {
+        "name": "x6",
+        "lower_bound": 0.0,
+        "upper_bound": 500.0,
+        "type": "continuous"
+      },
+      {
+        "name": "x7",
+        "lower_bound": 0.0,
+        "upper_bound": 500.0,
+        "type": "continuous"
+      }
+    ],
+    "constant_features": [
+      "year",
+      "month",
+      "day"
+    ]
+  },
+  "units": [
+    {
+      "unit_id": 0,
+      "constant_features": {
+        "year": 2023,
+        "month": 8,
+        "day": 6
+      }
+    },
+    {
+      "unit_id": 1,
+      "constant_features": {
+        "year": 2023,
+        "month": 8,
+        "day": 13
+      }
+    },
+    {
+      "unit_id": 2,
+      "constant_features": {
+        "year": 2023,
+        "month": 8,
+        "day": 20
+      }
+    },
+    {
+      "unit_id": 3,
+      "constant_features": {
+        "year": 2023,
+        "month": 8,
+        "day": 27
+      }
+    },
+    {
+      "unit_id": 4,
+      "constant_features": {
+        "year": 2023,
+        "month": 9,
+        "day": 3
+      }
+    },
+    {
+      "unit_id": 5,
+      "constant_features": {
+        "year": 2023,
+        "month": 9,
+        "day": 10
+      }
+    },
+    {
+      "unit_id": 6,
+      "constant_features": {
+        "year": 2023,
+        "month": 9,
+        "day": 17
+      }
+    },
+    {
+      "unit_id": 7,
+      "constant_features": {
+        "year": 2023,
+        "month": 9,
+        "day": 24
+      }
+    },
+    {
+      "unit_id": 8,
+      "constant_features": {
+        "year": 2023,
+        "month": 10,
+        "day": 1
+      }
+    },
+    {
+      "unit_id": 9,
+      "constant_features": {
+        "year": 2023,
+        "month": 10,
+        "day": 8
+      }
+    }
+  ],
+  "constraints": {
+    "sum_constraints": [
+      {
+        "constraint_id": "unit_0_total",
+        "description": "Total sum constraint for unit 0",
+        "variables": [
+          {
+            "unit_id": 0,
+            "feature": "x1",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 0,
+            "feature": "x2",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 0,
+            "feature": "x3",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 0,
+            "feature": "x4",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 0,
+            "feature": "x5",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 0,
+            "feature": "x6",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 0,
+            "feature": "x7",
+            "coefficient": 1.0
+          }
+        ],
+        "upper_bound": 1000.0
+      },
+      {
+        "constraint_id": "unit_1_total",
+        "description": "Total sum constraint for unit 1",
+        "variables": [
+          {
+            "unit_id": 1,
+            "feature": "x1",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 1,
+            "feature": "x2",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 1,
+            "feature": "x3",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 1,
+            "feature": "x4",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 1,
+            "feature": "x5",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 1,
+            "feature": "x6",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 1,
+            "feature": "x7",
+            "coefficient": 1.0
+          }
+        ],
+        "upper_bound": 1000.0
+      },
+      {
+        "constraint_id": "unit_2_total",
+        "description": "Total sum constraint for unit 2",
+        "variables": [
+          {
+            "unit_id": 2,
+            "feature": "x1",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 2,
+            "feature": "x2",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 2,
+            "feature": "x3",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 2,
+            "feature": "x4",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 2,
+            "feature": "x5",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 2,
+            "feature": "x6",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 2,
+            "feature": "x7",
+            "coefficient": 1.0
+          }
+        ],
+        "upper_bound": 1000.0
+      },
+      {
+        "constraint_id": "unit_3_total",
+        "description": "Total sum constraint for unit 3",
+        "variables": [
+          {
+            "unit_id": 3,
+            "feature": "x1",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 3,
+            "feature": "x2",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 3,
+            "feature": "x3",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 3,
+            "feature": "x4",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 3,
+            "feature": "x5",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 3,
+            "feature": "x6",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 3,
+            "feature": "x7",
+            "coefficient": 1.0
+          }
+        ],
+        "upper_bound": 1000.0
+      },
+      {
+        "constraint_id": "unit_4_total",
+        "description": "Total sum constraint for unit 4",
+        "variables": [
+          {
+            "unit_id": 4,
+            "feature": "x1",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 4,
+            "feature": "x2",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 4,
+            "feature": "x3",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 4,
+            "feature": "x4",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 4,
+            "feature": "x5",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 4,
+            "feature": "x6",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 4,
+            "feature": "x7",
+            "coefficient": 1.0
+          }
+        ],
+        "upper_bound": 1000.0
+      },
+      {
+        "constraint_id": "unit_5_total",
+        "description": "Total sum constraint for unit 5",
+        "variables": [
+          {
+            "unit_id": 5,
+            "feature": "x1",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 5,
+            "feature": "x2",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 5,
+            "feature": "x3",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 5,
+            "feature": "x4",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 5,
+            "feature": "x5",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 5,
+            "feature": "x6",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 5,
+            "feature": "x7",
+            "coefficient": 1.0
+          }
+        ],
+        "upper_bound": 1000.0
+      },
+      {
+        "constraint_id": "unit_6_total",
+        "description": "Total sum constraint for unit 6",
+        "variables": [
+          {
+            "unit_id": 6,
+            "feature": "x1",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 6,
+            "feature": "x2",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 6,
+            "feature": "x3",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 6,
+            "feature": "x4",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 6,
+            "feature": "x5",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 6,
+            "feature": "x6",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 6,
+            "feature": "x7",
+            "coefficient": 1.0
+          }
+        ],
+        "upper_bound": 1000.0
+      },
+      {
+        "constraint_id": "unit_7_total",
+        "description": "Total sum constraint for unit 7",
+        "variables": [
+          {
+            "unit_id": 7,
+            "feature": "x1",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 7,
+            "feature": "x2",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 7,
+            "feature": "x3",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 7,
+            "feature": "x4",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 7,
+            "feature": "x5",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 7,
+            "feature": "x6",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 7,
+            "feature": "x7",
+            "coefficient": 1.0
+          }
+        ],
+        "upper_bound": 1000.0
+      },
+      {
+        "constraint_id": "unit_8_total",
+        "description": "Total sum constraint for unit 8",
+        "variables": [
+          {
+            "unit_id": 8,
+            "feature": "x1",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 8,
+            "feature": "x2",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 8,
+            "feature": "x3",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 8,
+            "feature": "x4",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 8,
+            "feature": "x5",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 8,
+            "feature": "x6",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 8,
+            "feature": "x7",
+            "coefficient": 1.0
+          }
+        ],
+        "upper_bound": 1000.0
+      },
+      {
+        "constraint_id": "unit_9_total",
+        "description": "Total sum constraint for unit 9",
+        "variables": [
+          {
+            "unit_id": 9,
+            "feature": "x1",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 9,
+            "feature": "x2",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 9,
+            "feature": "x3",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 9,
+            "feature": "x4",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 9,
+            "feature": "x5",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 9,
+            "feature": "x6",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 9,
+            "feature": "x7",
+            "coefficient": 1.0
+          }
+        ],
+        "upper_bound": 1000.0
+      }
+    ]
+  },
+  "model": {
+    "file_path": "lgbm_100.txt",
+    "input_features_order": [
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "year",
+      "month",
+      "day"
+    ]
+  }
+}

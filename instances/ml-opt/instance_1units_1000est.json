@@ -1,0 +1,128 @@
+{
+  "n_units": 1,
+  "n_optimization_features": 7,
+  "n_constant_features": 3,
+  "n_sum_constraints": 1,
+  "features": {
+    "optimization_features": [
+      {
+        "name": "x1",
+        "lower_bound": 0.0,
+        "upper_bound": 500.0,
+        "type": "continuous"
+      },
+      {
+        "name": "x2",
+        "lower_bound": 0.0,
+        "upper_bound": 500.0,
+        "type": "continuous"
+      },
+      {
+        "name": "x3",
+        "lower_bound": 0.0,
+        "upper_bound": 500.0,
+        "type": "continuous"
+      },
+      {
+        "name": "x4",
+        "lower_bound": 0.0,
+        "upper_bound": 500.0,
+        "type": "continuous"
+      },
+      {
+        "name": "x5",
+        "lower_bound": 0.0,
+        "upper_bound": 500.0,
+        "type": "continuous"
+      },
+      {
+        "name": "x6",
+        "lower_bound": 0.0,
+        "upper_bound": 500.0,
+        "type": "continuous"
+      },
+      {
+        "name": "x7",
+        "lower_bound": 0.0,
+        "upper_bound": 500.0,
+        "type": "continuous"
+      }
+    ],
+    "constant_features": [
+      "year",
+      "month",
+      "day"
+    ]
+  },
+  "units": [
+    {
+      "unit_id": 0,
+      "constant_features": {
+        "year": 2023,
+        "month": 8,
+        "day": 6
+      }
+    }
+  ],
+  "constraints": {
+    "sum_constraints": [
+      {
+        "constraint_id": "unit_0_total",
+        "description": "Total sum constraint for unit 0",
+        "variables": [
+          {
+            "unit_id": 0,
+            "feature": "x1",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 0,
+            "feature": "x2",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 0,
+            "feature": "x3",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 0,
+            "feature": "x4",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 0,
+            "feature": "x5",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 0,
+            "feature": "x6",
+            "coefficient": 1.0
+          },
+          {
+            "unit_id": 0,
+            "feature": "x7",
+            "coefficient": 1.0
+          }
+        ],
+        "upper_bound": 1000.0
+      }
+    ]
+  },
+  "model": {
+    "file_path": "lgbm_1000.txt",
+    "input_features_order": [
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "year",
+      "month",
+      "day"
+    ]
+  }
+}

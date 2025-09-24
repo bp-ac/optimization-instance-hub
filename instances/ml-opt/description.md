@@ -43,3 +43,94 @@ $$
 目的関数は予測値の総和を最大化を表している。  
 (1)は最適化対象決定変数の総和が一定値以下に収まるようにする制約条件を表す。  
 (2)は決定変数の下限・上限の制約条件を表す。
+
+## 入力データ形式
+
+インスタンスファイルはJSON形式で提供され、以下の構造を持つ：
+
+### 基本情報
+```json
+{
+  "n_units": 1,                    // ユニット数 |N|
+  "n_optimization_features": 7,    // 最適化対象特徴量数 |O|
+  "n_constant_features": 3,        // 定数特徴量数 |C|
+  "n_sum_constraints": 1           // 総和制約数 |J|
+}
+```
+
+### 特徴量定義
+```json
+"features": {
+  "optimization_features": [       // 最適化対象特徴量 O = {x1,...,x7}
+    {
+      "name": "x1",
+      "lower_bound": 0.0,          // l_d (下限)
+      "upper_bound": 500.0,        // u_d (上限)
+      "type": "continuous"
+    },
+    // ... x2-x7も同様
+  ],
+  "constant_features": [           // 定数特徴量 C = {year, month, day}
+    "year", "month", "day"
+  ]
+}
+```
+
+### ユニット情報
+```json
+"units": [                         // ユニット集合 N
+  {
+    "unit_id": 0,                  // ユニットID i
+    "constant_features": {         // 定数特徴量 c_i
+      "year": 2023,
+      "month": 8,
+      "day": 6
+    }
+  }
+  // ... 他のユニット（複数ユニットの場合）
+]
+```
+
+### 制約条件
+```json
+"constraints": {
+  "sum_constraints": [             // 総和制約 j ∈ J
+    {
+      "constraint_id": "unit_0_total",
+      "description": "Total sum constraint for unit 0",
+      "variables": [               // Λ_j: 制約に含まれる変数
+        {
+          "unit_id": 0,            // ユニットID i
+          "feature": "x1",         // 特徴量 d
+          "coefficient": 1.0       // 係数
+        },
+        // ... x2-x7も同様
+      ],
+      "upper_bound": 1000.0        // B_j: 制約上限値
+    }
+  ]
+}
+```
+
+### モデル情報
+```json
+"model": {
+  "file_path": "lgbm_100.txt",     // 学習済みモデルファイル
+  "input_features_order": [        // モデル入力の特徴量順序
+    "x1", "x2", "x3", "x4", "x5", "x6", "x7",
+    "year", "month", "day"
+  ]
+}
+```
+
+### インスタンスサイズ
+ひとまず以下のインスタンスを生成している  
+
+- **ユニット数**：1, 10, 50  
+- **予測モデルの木の数**： 100, 500, 1000, 5000 (n_estimators)  
+- **決定変数範囲**：$x_1, ..., x_7 \in [0, 500]$（すべての最適化対象特徴量に対して一律）  
+- **制約条件**：各ユニットごとに $x_1 + ... + x_7 \le 1000$  
+
+### ファイル名規則
+- インスタンス: `instance_{n_units}units_{n_estimators}est.json`
+- モデル: `lgbm_{n_estimators}.txt`
