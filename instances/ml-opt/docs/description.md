@@ -9,6 +9,9 @@
 
 [Gurobi-MLの参考記事](https://gurobi-machinelearning.readthedocs.io/en/stable/auto_examples/example4_price_optimization.html#sphx-glr-auto-examples-example4-price-optimization-py)
 
+問題設定のイメージ図
+![](./assets/problem_setting.png)
+
 より正確には以下のように定式化される問題を考える。  
 
 ## 集合

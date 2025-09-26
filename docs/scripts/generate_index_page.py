@@ -41,9 +41,25 @@ def extract_summary(markdown_text: str) -> str:
     return summary
 
 
+def copy_assets(inst_dir: Path, slug: str) -> None:
+    """インスタンスの assets ディレクトリから画像ファイルを生成先にコピーする"""
+    assets_dir = inst_dir / "docs" / "assets"
+    if not assets_dir.exists():
+        return
+
+    print(f"[gen] copying assets from {assets_dir}")
+    for asset_file in assets_dir.iterdir():
+        if asset_file.is_file():
+            # instances/{slug}/assets/{ファイル名} として出力（VSCodeプレビューと同じ構造）
+            dst_path = f"instances/{slug}/assets/{asset_file.name}"
+            print(f"[gen] copy asset: {asset_file.name} -> {dst_path}")
+            with gen.open(dst_path, "wb") as f:
+                f.write(asset_file.read_bytes())
+
+
 def iter_instance_dirs(instances_root: Path) -> Iterable[Path]:
     for child in sorted(instances_root.iterdir()):
-        if child.is_dir() and (child / "description.md").exists():
+        if child.is_dir() and (child / "docs" / "description.md").exists():
             yield child
 
 
@@ -61,12 +77,15 @@ def main() -> None:
     found: list[Path] = list(iter_instance_dirs(instances_root))
     print(f"[gen] found instances: {[p.name for p in found]}")
     for inst_dir in found:
-        desc_path = inst_dir / "description.md"
+        desc_path = inst_dir / "docs" / "description.md"
         raw_md = read_text(desc_path)
 
         slug = inst_dir.name
         title = extract_title(raw_md, fallback=slug)
         summary = extract_summary(raw_md) or ""
+
+        # アセットファイルをコピー
+        copy_assets(inst_dir, slug)
 
         # 出力先: instances/<slug>.md
         dst_page_path = f"instances/{slug}.md"
